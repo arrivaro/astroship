@@ -2,7 +2,19 @@
 
 @plugin '@tailwindcss/typography';
 
+:root {
+  --brand-primary: #0A1F44; /* Deep Navy */
+  --brand-secondary: #F5EDE2; /* Soft Sand */
+  --brand-accent: #D4AF37; /* Aspirational Gold */
+  --brand-text-on-dark: #F5EDE2;
+}
+
 @theme {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-text-on-dark: var(--brand-text-on-dark);
+
   --font-sans:
     Bricolage Grotesque Variable, Inter Variable, Inter, ui-sans-serif,
     system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
