@@ -30,6 +30,10 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+  body {
+    background-color: var(--brand-secondary);
+  }
+
   *,
   ::after,
   ::before,

@@ -1,53 +1,33 @@
 ---
-import { Picture } from "astro:assets";
-import heroImage from "@/assets/hero.png";
+import { Picture, getImage } from "astro:assets";
+import heroImage from "@/assets/image.png";
 import Link from "@/components/ui/link.astro";
 import { Icon } from "astro-icon/components";
+
+const bgImage = await getImage({ src: heroImage, format: "avif" });
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
+  class="flex items-center min-h-[600px] bg-cover bg-center relative pb-24 md:pb-32"
+  style={`background-image: url(${bgImage.src});`}>
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-brand-primary/90 via-brand-primary/50 to-transparent">
   </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-        Download for Free
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
-      </Link>
+  <div class="relative z-10 w-full">
+    <div class="p-8 md:p-20 max-w-3xl text-left">
+      <h1
+        class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-brand-secondary font-serif">
+        Arrive with <br /> Confidence.
+      </h1>
+      <p
+        class="text-2xl mt-4 text-brand-secondary/90 max-w-xl font-serif italic">
+        From door to destination, effortlessly.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-start">
+        <Link href="#" style="accent" class="flex gap-1 items-center justify-center">
+          Explore Your Next Arrival
+        </Link>
+      </div>
     </div>
   </div>
 </main>
