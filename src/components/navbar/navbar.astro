@@ -5,23 +5,27 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon, OpenIcon } from "astro-navbar";
 
 const menuitems = [
-  {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
-    ],
+  // {
+  //   title: "Features",
+  //   path: "#",
+  //   children: [
+  //     { title: "Action", path: "/" },
+  //     { title: "Another action", path: "#" },
+  //     { title: "Dropdown Submenu", path: "#" },
+  //     { title: "404 Page", path: "/404" },
+  //   ],
+  // },
+  //   {
+  //   title: "About",
+  //   path: "/about",
+  // },
+    {
+    title: "Home",
+    path: "/",
   },
   {
     title: "Pricing",
     path: "/pricing",
-  },
-  {
-    title: "About",
-    path: "/about",
   },
   // {
   //   title: "Blog",
@@ -85,15 +89,15 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
-          <Link href="#" size="md" style="accent" block>Sign up</Link>
+          <Link style="accent" href="https://dvi4ge7olothr.cloudfront.net/" style="muted" block size="md">Log in</Link>
+          <!-- <Link href="#" size="md" style="accent" block>Sign up</Link> -->
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#" class="text-brand-text-on-dark/80 hover:text-white">Log in</a>
-        <Link href="#" size="md" style="accent">Sign up</Link>
+        <Link style="accent" href="https://dvi4ge7olothr.cloudfront.net/">Log in</a>
+        <!-- <Link href="#" size="md" style="accent">Sign up</Link> -->
       </div>
     </div>
     </header>
